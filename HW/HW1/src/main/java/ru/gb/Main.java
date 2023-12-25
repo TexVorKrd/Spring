@@ -1,7 +1,5 @@
 package ru.gb;
 
-import java.util.logging.SocketHandler;
-
 public class Main {
 
     public static void main(String[] args) {

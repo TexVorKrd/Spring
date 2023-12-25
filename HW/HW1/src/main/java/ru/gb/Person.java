@@ -1,6 +1,5 @@
 package ru.gb;
 
-
 import com.google.gson.Gson;
 import org.apache.commons.lang3.builder.EqualsBuilder;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
@@ -69,6 +68,7 @@ public class Person implements Serializable {
         Field[] fields = this.getClass().getDeclaredFields();
 
         for (Field fl : fields) {
+            fl.setAccessible(true);
             try {
                 equalsBuilder.append(fl.get(this), fl.get(rhs));
             } catch (IllegalAccessException e) {
@@ -91,6 +91,7 @@ public class Person implements Serializable {
         Field[] fields = this.getClass().getDeclaredFields();
 
         for (Field fl : fields) {
+            fl.setAccessible(true);
             try {
                 msg.append(fl.getName(), fl.get(this));
             } catch (IllegalAccessException e) {
@@ -118,9 +119,4 @@ public class Person implements Serializable {
     public static Person fromJson(String strJson) {
         return new Gson().fromJson(strJson, Person.class);
     }
-
-
-
-
-
 }
