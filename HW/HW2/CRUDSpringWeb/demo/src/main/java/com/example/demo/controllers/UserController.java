@@ -55,9 +55,10 @@ public class UserController {
     }
 
     @GetMapping("user-update/{id}")
-    public String updateUser(User user, @PathVariable(name = "id") int id)
+    public String updateUser(Model model, @PathVariable(name = "id") int id)
     {
-        user=userService.getUserById(id);
+        User user=userService.getUserById(id);
+        model.addAttribute("user",user);
         System.out.println(user.toString());
         return "user-update";
     }
