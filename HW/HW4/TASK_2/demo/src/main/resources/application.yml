@@ -1,0 +1,12 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+
+data:
+  parameter:
+    sql-req:
+      findAll: "SELECT * FROM userTable"
+      save: "INSERT INTO userTable VALUES (NULL, ?, ?)"
+      deleteById: "DELETE FROM userTable WHERE id=?"
+      updateById: "UPDATE userTable SET firstName=?, lastName=? WHERE id=?"

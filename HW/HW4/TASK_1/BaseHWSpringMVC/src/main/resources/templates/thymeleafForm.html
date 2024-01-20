@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home work fo Spreeng MVC (base)</title>
+    <h1>Task 3</h1>
+    <p>Создание формы ввода и обработка данных формы
+        Создайте страницу с формой ввода, используя Thymeleaf для рендеринга формы.<br>
+        Затем создайте контроллер Spring MVC, который обрабатывает отправку формы и выводит полученные данные.<br>
+        Это может быть форма для регистрации или любая другая форма, которая собирает информацию от пользователя.<br>
+        Все необходимые примеры кода для этого задания мы разбирали на семинаре.<br>
+    </p>
+
+    <br>
+    <br>
+    <br>
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td th:text="${fname}"></td>
+        </tr>
+        <tr>
+            <td>Second Name</td>
+            <td th:text="${sname}"></td>
+        </tr>
+    </table>
+    <br>
+    <br>
+    <br>
+    <form action="/task3" method="post">
+        <input type="text" id="fname" name="fname" placeholder="Имя">
+        <input type="text" id="sname" name="sname" placeholder="Фамилия">
+        <input type="submit" value="отправить">
+    </form>
+    <a href="/task2">Back</a>
+</head>
+<body>
+
+</body>
+</html>
