@@ -1,0 +1,14 @@
+server:
+  error:
+    whitelabel:
+      enabled: false
+spring:
+  profiles:
+    active: H2
+data:
+  parameter:
+    sql-req:
+      findAll: "SELECT * FROM userTable"
+      save: "INSERT INTO userTable VALUES (?, ?, ?)"
+
+
