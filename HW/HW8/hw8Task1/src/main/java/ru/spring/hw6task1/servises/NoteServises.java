@@ -4,6 +4,7 @@ package ru.spring.hw6task1.servises;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.spring.hw6task1.Model.Note;
+import ru.spring.hw6task1.aspect.TrackUserAction;
 import ru.spring.hw6task1.resitory.NoteRepository;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class NoteServises {
      * @param note - заметка
      * @return Возвращает заметку
      */
+    @TrackUserAction
     public Note addNote(Note note) {
         if (note != null) return repository.save(note);
         return null;
@@ -70,6 +72,7 @@ public class NoteServises {
      * @param id - идентификатор удаляемого объекта
      * @return - удаленный объект
      */
+    @TrackUserAction
     public Note deleteNote(Long id) {
 
         Optional<Note> optionalNote = repository.findById(id);
@@ -79,5 +82,14 @@ public class NoteServises {
         } else {
             return null;
         }
+    }
+
+    public void test(){
+        addNote(new Note("Задача1","Описание 1"));
+        addNote(new Note("Задача2","Описание 2"));
+        addNote(new Note("Задача3","Описание 3"));
+
+        deleteNote(1L);
+
     }
 }

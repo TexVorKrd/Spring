@@ -1,0 +1,5 @@
+data:
+  parameter:
+    api:
+      rickamdmorty: "https://rickandmortyapi.com/api"
+
