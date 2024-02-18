@@ -1,0 +1,30 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: UserService
+  datasource:
+    url: jdbc:postgresql://localhost:5432/jpatest
+    username: sa
+    password: 123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+#https://runebook.dev/ru/docs/spring_boot/actuator
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+
+
+
+

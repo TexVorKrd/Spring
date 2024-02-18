@@ -1,0 +1,12 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    openfeign:
+      client:
+        config:
+          user-service:
+            url: http://localhost:8765/userService
+          offer-service:
+            url: http://localhost:8765/transportationService
