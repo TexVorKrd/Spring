@@ -1,0 +1,5 @@
+smoke1-test-job-remote:
+  script: echo "SMOKE from remote repository"
+
+smoke2-test-job-remote:
+  script: echo " FULL SMOKE from remote repository"
